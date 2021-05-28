@@ -171,7 +171,7 @@ export default class LoadNetwork extends React.Component {
               disabled={disabled}
               icon="book"
               title="Load example"
-              description="Citation network"
+              description="SWR Citation network"
               link
               onClick={this.loadExampleData}
             />
