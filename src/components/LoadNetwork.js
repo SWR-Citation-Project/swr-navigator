@@ -185,7 +185,7 @@ export default class LoadNetwork extends React.Component {
                 <Step
                   disabled={disabled}
                   link
-                  onClick={() => this.loadNetwork(ftree, "infomap.ftree")}
+                  onClick={() => this.loadNetwork(ftree, "swr.ftree")}
                 >
                   <Image
                     spaced="right"
