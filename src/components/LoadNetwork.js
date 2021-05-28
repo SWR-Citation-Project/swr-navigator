@@ -55,7 +55,7 @@ export default class LoadNetwork extends React.Component {
       })
       .catch((err) => console.error(err));
 
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NODE_ENV === "build") {
       this.loadExampleData();
     }
   }
