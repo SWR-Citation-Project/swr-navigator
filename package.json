@@ -1,7 +1,7 @@
 {
   "name": "swr-network-navigator",
   "version": "1.2.0",
-  "homepage": ".",
+  "homepage": "https://swr-network.netlify.app",
   "private": true,
   "dependencies": {
     "@sentry/browser": "^5.15.4",
