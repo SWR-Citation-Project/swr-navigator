@@ -132,7 +132,7 @@ export default class LoadNetwork extends React.Component {
       progressError: false,
     });
 
-    fetch(`/navigator/${filename}`)
+    fetch(`${filename}`)
       .then((res) => res.text())
       .then((file) => this.loadNetwork(file, filename))
       .catch((err) => {
