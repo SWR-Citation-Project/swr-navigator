@@ -12,9 +12,9 @@ const Header = () => (
               SWR Citation Test
             </a>
             <div className="content">
-                            <span className="brand">
-                                <span className="brand-infomap">Infomap</span> <span className="brand-nn">Network Navigator</span>
-                            </span>
+                <span className="brand">
+                    <span className="brand-infomap">Infomap</span> <span className="brand-nn">Network Navigator</span>
+                </span>
               <div className="sub header">Interactive hierarchical network navigator</div>
             </div>
           </h1>

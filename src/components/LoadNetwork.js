@@ -174,7 +174,7 @@ export default class LoadNetwork extends React.Component {
             <Step
               disabled={disabled}
               icon="book"
-              title="Load example"
+              title="Load current SWR sample"
               description="SWR Citation network"
               link
               onClick={this.loadExampleData}
