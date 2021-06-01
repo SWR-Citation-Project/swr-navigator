@@ -37,6 +37,10 @@ export default class LoadNetwork extends React.Component {
   progressTimeout = null;
 
   componentDidMount() {
+
+    // temp hack load solution
+    // this.loadExampleData();
+
     const urlParams = new URLSearchParams(window.location.search);
     const args = urlParams.get("infomap");
 
@@ -50,9 +54,7 @@ export default class LoadNetwork extends React.Component {
 
         this.setState({ ftree });
         if (args) {
-          // temp hack load solution
-          this.loadExampleData();
-          // this.loadNetwork(ftree, args);
+          this.loadNetwork(ftree, args);
         }
       })
       .catch((err) => console.error(err));
@@ -130,7 +132,7 @@ export default class LoadNetwork extends React.Component {
       progressError: false,
     });
 
-    fetch(`${filename}`)
+    fetch(`/navigator/${filename}`)
       .then((res) => res.text())
       .then((file) => this.loadNetwork(file, filename))
       .catch((err) => {
