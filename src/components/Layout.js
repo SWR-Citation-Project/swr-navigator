@@ -40,7 +40,7 @@ function reducer(state, action) {
 
 export default function Layout(props) {
   const initialState = {
-    nodeLimit: 20,
+    nodeLimit: 10,
     nodeSize: "flow",
     nodeScale: "root",
     linkScale: "root",

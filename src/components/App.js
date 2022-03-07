@@ -8,7 +8,7 @@ import LoadNetwork from "./LoadNetwork";
 export default function App() {
   const initialState = {
     network: null,
-    filename: "swr.ftree"
+    filename: "swr_complete_corpus.ftree"
   };
 
   const [state, setState] = useState(initialState);
