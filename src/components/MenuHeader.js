@@ -10,10 +10,16 @@ export default function MenuHeader() {
       src="//www.mapequation.org/assets/img/twocolormapicon_whiteboarder.svg"
       alt="mapequation-icon"
     />
-    <div className="content">
-            <span className="brand">
-                <span className="brand-infomap">Infomap</span> <span className="brand-nn">Network Navigator</span>
-            </span>
+    <div className="content menu_header">
+      <span className="brand">
+          <span className="brand-nn">SWR Network Navigator</span>
+      </span>
+      <p>
+        Zoom in and out with your touchpad. Click on nodes to either drag and move or highlight their connections.
+      </p>
+      <p>
+        Default detected modules set to top 10. <br/><br/> Add or subtract the number of individual nodes in each module in the 'Settings' area. The default is set to the top 5 nodes per module.
+      </p>
     </div>
   </Header>;
 }

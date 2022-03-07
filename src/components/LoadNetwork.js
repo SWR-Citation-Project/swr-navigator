@@ -157,6 +157,7 @@ export default class LoadNetwork extends React.Component {
       background: `linear-gradient(hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.5)), url(${Background}) no-repeat`,
       backgroundSize: "cover, cover",
       backgroundPosition: "center top",
+      height: "80vh",
     };
 
     return (
@@ -174,7 +175,7 @@ export default class LoadNetwork extends React.Component {
             <Step
               disabled={disabled}
               icon="book"
-              title="Load current SWR sample"
+              title="Load 2012-2019 SWR corpus"
               description="SWR Citation network"
               link
               onClick={this.loadExampleData}
@@ -214,10 +215,10 @@ export default class LoadNetwork extends React.Component {
           <Divider
             horizontal
             style={{ margin: "20px 100px 30px 100px" }}
-            content="Or"
+            content="Click on the above 'Load' button to render the network."
           />
 
-          <Step.Group ordered>
+          {/* <Step.Group ordered>
             <Step
               disabled={disabled}
               link
@@ -249,7 +250,7 @@ export default class LoadNetwork extends React.Component {
             onChange={() => this.loadNetwork(this.input.files[0])}
             accept=".ftree"
             ref={(input) => (this.input = input)}
-          />
+          /> */}
 
           {progressVisible && (
             <div style={{ padding: "50px 100px 0" }}>

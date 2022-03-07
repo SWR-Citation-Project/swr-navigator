@@ -43,6 +43,45 @@ export default function Sidebar(props) {
     </Menu.Item>
     <Menu.Item onClick={() => dispatch({ type: "sidebarVisible", value: false })} icon='close' content='Hide sidebar'/>
     <Menu.Item>
+      <Header as="h4">Settings</Header>
+      <Settings {...props} />
+    </Menu.Item>
+    <Menu.Item>
+      <Header as="h4">Export</Header>
+      <Menu.Menu>
+        <Menu.Item
+          as="paragraph"
+          content={"Export your current view of the network"}
+        />
+        {/* <Menu.Item
+          icon="download"
+          content={"Download network"}
+          onClick={handleDownloadClick}
+        /> */}
+      </Menu.Menu>
+      <Menu.Menu>
+        <Menu.Item
+          icon="download"
+          onClick={() => saveSvg("networkNavigatorSvg", filename + ".svg")}
+          content="Download SVG"
+        />
+      </Menu.Menu>
+      <Menu.Menu>
+        <Menu.Item
+          icon="image"
+          onClick={() => savePng("networkNavigatorSvg", filename + ".png")}
+          content="Download PNG"
+        />
+      </Menu.Menu>
+      <Menu.Menu>
+        <Menu.Item
+          icon="download"
+          content={"Download network"}
+          onClick={handleDownloadClick}
+        />
+      </Menu.Menu>
+    </Menu.Item>
+    <Menu.Item>
       <Search onChange={searchCallback}/>
     </Menu.Item>
     <Menu.Item>
@@ -68,34 +107,6 @@ export default function Sidebar(props) {
         filename={filename}
         totalNodes={network.totalChildren}
       />
-    </Menu.Item>
-    <Menu.Item>
-      <Header as="h4">Settings</Header>
-      <Settings {...props} />
-    </Menu.Item>
-    <Menu.Item>
-      <Header as="h4">Export</Header>
-      <Menu.Menu>
-        <Menu.Item
-          icon="download"
-          content={"Download network"}
-          onClick={handleDownloadClick}
-        />
-      </Menu.Menu>
-      <Menu.Menu>
-        <Menu.Item
-          icon="download"
-          onClick={() => saveSvg("networkNavigatorSvg", filename + ".svg")}
-          content="Download SVG"
-        />
-      </Menu.Menu>
-      <Menu.Menu>
-        <Menu.Item
-          icon="image"
-          onClick={() => savePng("networkNavigatorSvg", filename + ".png")}
-          content="Download PNG"
-        />
-      </Menu.Menu>
     </Menu.Item>
   </SemanticSidebar>;
 }
