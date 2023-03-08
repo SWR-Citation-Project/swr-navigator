@@ -120,7 +120,7 @@ export default class LoadNetwork extends React.Component {
   };
 
   loadNetworkData = () => {
-    const filename = "swr.ftree";
+    const filename = "/swr.ftree";
 
     this.setState({
       progressVisible: true,
@@ -188,7 +188,7 @@ export default class LoadNetwork extends React.Component {
                 <Step
                   disabled={disabled}
                   link
-                  onClick={() => this.loadNetworkData(ftree, "swr.ftree")}
+                  onClick={() => this.loadNetworkData(ftree, "/swr.ftree")}
                 >
                   <Image
                     spaced="right"
