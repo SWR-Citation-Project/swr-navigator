@@ -20,19 +20,25 @@ export default function Home() {
     const baseUrl = dev ? 'http://localhost:3000' : 'https://swr-network.netlify.app'
 
     const fetchIntraData = axios
-      .get(baseUrl + "/data/swr-timeline-top25-overall-per-year.json")
+      .get(baseUrl + "/data/swr-timeline-top25-overall-per-year.json",
+        {
+          headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+      })
       .then((res) => {
         return res.data
       })
       .catch(err=>console.log(err))
 
     // const fetchIntraData = fetch(
-    //     "/data/swr-timeline-top25-overall-per-year.json",
-    //     {
-    //       headers : { 
-    //         'Content-Type': 'application/json',
-    //         'Accept': 'application/json'
-    //       }
+        // "/data/swr-timeline-top25-overall-per-year.json",
+        // {
+        //   headers : { 
+        //     'Content-Type': 'application/json',
+        //     'Accept': 'application/json'
+        //   }
     //     }
     //   )
     //   .then((response) => {
