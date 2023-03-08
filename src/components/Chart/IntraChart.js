@@ -78,9 +78,9 @@ const IntraChart = (d) => {
               topBarWidth = 20,
               rowPadding = 8,
               textOffset = 1,
-              textOffsetX = 5;
+              textOffsetX = 35;
 
-        const types = d3c.nest().key(d => d.cited_name )
+        const types = d3c.nest().key(d => d.cited_name)
           .rollup(scholars => ({
             total: d3.sum(scholars, s => s.cited_total),
             scale: d3.scaleSqrt()

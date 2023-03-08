@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"
+import axios from "axios"
 
 import "./assets/css/styles.css";
 import { accessorPropsType } from "./Chart/utils"
@@ -15,19 +16,28 @@ export default function Home() {
   useEffect(() => {
     setLoading(true)
 
-    const fetchIntraData = fetch("/data/swr-timeline-top25-overall-per-year.json",
-      {
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
+    const fetchIntraData = axios
+      .get("./data/swr-timeline-top25-overall-per-year.json")
+      .then((res) => {
+        return res.data
       })
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        return data
-      })
+      .catch(err=>console.log(err))
+
+    // const fetchIntraData = fetch(
+    //     "/data/swr-timeline-top25-overall-per-year.json",
+    //     {
+    //       headers : { 
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //       }
+    //     }
+    //   )
+    //   .then((response) => {
+    //     return response.json()
+    //   })
+    //   .then((data) => {
+    //     return data
+    //   })
 
     const getIntraData = async () => {
       const d = await fetchIntraData
