@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"
-// import * as d3 from "d3"
-import {json} from "d3"
 
 import "./assets/css/styles.css";
 import { accessorPropsType } from "./Chart/utils"
@@ -17,23 +15,24 @@ export default function Home() {
   useEffect(() => {
     setLoading(true)
 
-    // const fetchIntraData = fetch("/data/swr-timeline-top25-overall-per-year.json")
-    //   .then((response) => {
-    //     return response.json()
-    //   })
-    //   .then((data) => {
-    //     return data
-    //   })
+    const fetchIntraData = fetch("/data/swr-timeline-top25-overall-per-year.json",
+      {
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      })
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        return data
+      })
 
     const getIntraData = async () => {
-      json("/data/swr-timeline-top25-overall-per-year.json")
-      .then((d) => {
-        setLoading(false)
-        SetIntraRows(d)
-      })
-      // const d = await fetchIntraData
-      // setLoading(false)
-      // SetIntraRows(d)
+      const d = await fetchIntraData
+      setLoading(false)
+      SetIntraRows(d)
     }
     getIntraData()
   }, [])
