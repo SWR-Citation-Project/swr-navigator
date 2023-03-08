@@ -16,11 +16,11 @@ export default function Home() {
   useEffect(() => {
     setLoading(true)
 
-    const dev = process.env.NODE_ENV !== 'production'
-    const baseUrl = dev ? 'http://localhost:3000' : 'https://swr-network.netlify.app'
+    // const dev = process.env.NODE_ENV !== 'productio'
+    // const baseUrl = dev ? 'http://localhost:3000' : 'https://swr-network.netlify.app'
 
     const fetchIntraData = axios
-      .get(baseUrl + "/data/swr-timeline-top25-overall-per-year.json",
+      .get("swr-timeline-top25-overall-per-year.json",
         {
           headers : { 
             'Content-Type': 'application/json',
