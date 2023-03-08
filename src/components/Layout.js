@@ -39,8 +39,9 @@ function reducer(state, action) {
 }
 
 export default function Layout(props) {
+
   const initialState = {
-    nodeLimit: 10,
+    nodeLimit: 20,
     nodeSize: "flow",
     nodeScale: "root",
     linkScale: "root",
@@ -51,36 +52,38 @@ export default function Layout(props) {
     selectedNodeNameUpdatedBit: true,
     occurrences: null,
     lodEnabled: true,
-    searchCallback: () => null,
+    searchCallback: () => null
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <Dispatch.Provider value={{ dispatch }}>
-      <SemanticSidebar.Pushable style={{ height: "100vh", overflow: "hidden" }}>
-        <Sidebar {...state} {...props} />
-        <SemanticSidebar.Pusher>
-          <Rail
-            internal
-            position="right"
-            style={{ padding: 0, margin: 0, height: 0, width: "182px" }}
-          >
-            <Menu vertical size="small">
-              <Menu.Item
-                icon="sidebar"
-                content="Show sidebar"
-                onClick={() =>
-                  dispatch({ type: "sidebarVisible", value: true })
-                }
-              />
-            </Menu>
-          </Rail>
-          <React.StrictMode>
-            <NetworkNavigator {...state} {...props} />
-          </React.StrictMode>
-        </SemanticSidebar.Pusher>
-      </SemanticSidebar.Pushable>
-    </Dispatch.Provider>
+    <div>
+      <Dispatch.Provider value={{ dispatch }}>
+        <SemanticSidebar.Pushable style={{ height: "100vh", overflow: "hidden" }}>
+          <Sidebar {...state} {...props} />
+          <SemanticSidebar.Pusher>
+            <Rail
+              internal
+              position="right"
+              style={{ padding: 0, margin: 0, height: 0, width: "182px" }}
+            >
+              <Menu vertical size="small">
+                <Menu.Item
+                  icon="sidebar"
+                  content="Show sidebar"
+                  onClick={() =>
+                    dispatch({ type: "sidebarVisible", value: true })
+                  }
+                />
+              </Menu>
+            </Rail>
+            <React.StrictMode>
+              <NetworkNavigator {...state} {...props} />
+            </React.StrictMode>
+          </SemanticSidebar.Pusher>
+        </SemanticSidebar.Pushable>
+      </Dispatch.Provider>
+    </div>
   );
 }

@@ -1,14 +1,14 @@
-import { drag, event } from "d3";
+import { drag } from "d3";
 
 
 export default function makeDragHandler(simulation) {
-  const onDragStart = (node) => {
+  const onDragStart = (event, node) => {
     if (!event.active) simulation.alphaTarget(0.3).restart();
     node.fx = node.x;
     node.fy = node.y;
   };
 
-  const onDrag = (node) => {
+  const onDrag = (event, node) => {
     node.fx = event.x;
     node.fy = event.y;
   };

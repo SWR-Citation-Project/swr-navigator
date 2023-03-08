@@ -98,6 +98,7 @@ class Link {
  * Internal use only, @see createNetwork
  */
 class Network {
+  
   constructor() {
     this._name = undefined;
     this._nodes = new Map();

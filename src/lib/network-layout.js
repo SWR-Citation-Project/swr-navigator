@@ -88,9 +88,9 @@ export default class NetworkLayout {
       .on("start", () => {
         this.updateDisabled = true;
       })
-      .on("drag", (node) => {
-        node.x = d3.event.x;
-        node.y = d3.event.y;
+      .on("drag", (event, node) => {
+        node.x = event.x;
+        node.y = event.y;
         this.updateAttributes(true);
       })
       .on("end", () => {
@@ -163,6 +163,7 @@ export default class NetworkLayout {
       lod: linkByIndex(this.links),
     };
 
+    // Change node color, if clicked
     const onNodeClicked = ((dispatch) =>
       function(n) {
         dispatch.call("click", this, n);

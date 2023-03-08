@@ -1,0 +1,163 @@
+╰─± ./Infomap /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/net/swr_complete_corpus_20230220.net /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/ftree/outputs/20230222 -v -N 10 --directed --two-level --ftree
+=======================================================
+  Infomap v0.20.2 starts at [2023-02-22 10:52:43]
+  -> Input network: /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/net/swr_complete_corpus_20230220.net
+  -> Output path:   /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/ftree/outputs/20230222/
+  -> Configuration: ftree
+                    two-level
+                    directed
+                    num-trials = 10
+                    verbose
+  -> Use directed flow and 1st order Markov dynamics with unrecorded teleportation to links
+=======================================================
+Parsing directed network from file '/Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/net/swr_complete_corpus_20230220.net'... done!
+ --> Found 20924 nodes and 65650 links.
+ --> Aggregated 8480 links to existing links.
+ --> Ignored 829 self-links.
+ --> 19569 dangling nodes (nodes with no outgoing links).
+ ==> 20924 nodes and 56341 links (with total weight 64821).
+Calculating global flow... 
+  -> Using unrecorded teleportation to links. 
+  -> PageRank calculation done in 78 iterations.
+Calculating one-level codelength... done!
+  -> One-level codelength: 12.97367797
+Calculating entropy rate... done!
+  -> Entropy rate: 1.031599112
+Initiating done in 0.13341s
+
+Attempt 1/10 at [2023-02-22 10:52:43]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1396*5, 1152*2, 1149*1, nodes*loops to codelength 9.11046 (3.45719 + 5.65327) in 1149 modules. (679 non-trivial modules)
+Iteration 2, moving 20924*4, 1162*2, 1152*1, nodes*loops to codelength 9.05366 (3.42743 + 5.62623) in 1152 modules. (671 non-trivial modules)
+Iteration 3, moving 8299*5, 2920*3, 2887*2, 2886*1, modules*loops to codelength 7.86942 (3.47301 + 4.39641) in 2886 modules. (730 non-trivial modules)
+Iteration 4, moving 20924*4, 983*3, 912*2, 911*1, nodes*loops to codelength 9.0028 (3.25954 + 5.74326) in 911 modules. (648 non-trivial modules)
+Two-level codelength: 3.25954 + 5.74326 = 9.00280198
+
+Building output tree with links... 
+  -> Writing /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/ftree/outputs/20230222/swr_complete_corpus_20230220.ftree...
+Done!
+
+Attempt 2/10 at [2023-02-22 10:52:43]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1366*4, 1102*2, 1097*1, nodes*loops to codelength 9.12041 (3.42027 + 5.70014) in 1097 modules. (678 non-trivial modules)
+Iteration 2, moving 20924*4, 1129*2, 1118*1, nodes*loops to codelength 9.03728 (3.36725 + 5.67004) in 1118 modules. (667 non-trivial modules)
+Iteration 3, moving 8405*4, 3147*4, 2990*2, 2989*1, modules*loops to codelength 7.87829 (3.44109 + 4.43721) in 2989 modules. (715 non-trivial modules)
+Iteration 4, moving 20924*4, 964*3, 901*1, nodes*loops to codelength 9.01034 (3.28324 + 5.7271) in 901 modules. (645 non-trivial modules)
+Two-level codelength: 3.28324 + 5.7271 = 9.010344339
+
+Attempt 3/10 at [2023-02-22 10:52:44]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1437*4, 1153*2, 1151*1, nodes*loops to codelength 9.11398 (3.44174 + 5.67224) in 1151 modules. (685 non-trivial modules)
+Iteration 2, moving 20924*3, 1158*4, 1123*1, nodes*loops to codelength 9.05665 (3.37693 + 5.67972) in 1123 modules. (672 non-trivial modules)
+Iteration 3, moving 8469*5, 3035*4, 3002*2, 3001*1, modules*loops to codelength 7.88362 (3.5105 + 4.37312) in 3001 modules. (719 non-trivial modules)
+Iteration 4, moving 20924*2, 1027*3, 925*1, nodes*loops to codelength 9.02452 (3.29207 + 5.73245) in 925 modules. (636 non-trivial modules)
+Two-level codelength: 3.29207 + 5.73245 = 9.02451871
+
+Attempt 4/10 at [2023-02-22 10:52:44]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1444*4, 1200*2, 1196*1, nodes*loops to codelength 9.11406 (3.47752 + 5.63655) in 1196 modules. (683 non-trivial modules)
+Iteration 2, moving 20924*3, 1192*2, 1180*1, nodes*loops to codelength 9.05558 (3.42269 + 5.63289) in 1180 modules. (670 non-trivial modules)
+Iteration 3, moving 8307*6, 2920*3, 2889*2, 2888*1, modules*loops to codelength 7.90679 (3.49046 + 4.41632) in 2888 modules. (724 non-trivial modules)
+Iteration 4, moving 20924*5, 986*3, 912*1, nodes*loops to codelength 9.00207 (3.25432 + 5.74775) in 912 modules. (641 non-trivial modules)
+Two-level codelength: 3.25432 + 5.74775 = 9.002069702
+
+Building output tree with links... 
+  -> Writing /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/ftree/outputs/20230222/swr_complete_corpus_20230220.ftree...
+Done!
+
+Attempt 5/10 at [2023-02-22 10:52:44]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1401*5, 1153*2, 1149*1, nodes*loops to codelength 9.11327 (3.44838 + 5.66489) in 1149 modules. (678 non-trivial modules)
+Iteration 2, moving 20924*3, 1166*2, 1155*1, nodes*loops to codelength 9.06367 (3.4035 + 5.66017) in 1155 modules. (665 non-trivial modules)
+Iteration 3, moving 8280*6, 2941*3, 2913*1, modules*loops to codelength 7.83913 (3.46398 + 4.37516) in 2913 modules. (731 non-trivial modules)
+Iteration 4, moving 20924*3, 982*3, 889*2, 888*1, nodes*loops to codelength 9.01151 (3.22337 + 5.78813) in 888 modules. (641 non-trivial modules)
+Two-level codelength: 3.22337 + 5.78813 = 9.011506176
+
+Attempt 6/10 at [2023-02-22 10:52:45]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1437*4, 1178*2, 1174*1, nodes*loops to codelength 9.12142 (3.41755 + 5.70387) in 1174 modules. (676 non-trivial modules)
+Iteration 2, moving 20924*4, 1212*2, 1199*1, nodes*loops to codelength 9.07155 (3.39968 + 5.67187) in 1199 modules. (668 non-trivial modules)
+Iteration 3, moving 8414*5, 3014*2, 2982*1, modules*loops to codelength 7.88919 (3.45646 + 4.43273) in 2982 modules. (723 non-trivial modules)
+Iteration 4, moving 20924*5, 1001*3, 932*1, nodes*loops to codelength 9.00589 (3.26295 + 5.74294) in 932 modules. (644 non-trivial modules)
+Two-level codelength: 3.26295 + 5.74294 = 9.005888785
+
+Attempt 7/10 at [2023-02-22 10:52:45]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1363*4, 1109*2, 1102*1, nodes*loops to codelength 9.1071 (3.38927 + 5.71783) in 1102 modules. (669 non-trivial modules)
+Iteration 2, moving 20924*3, 1115*2, 1107*1, nodes*loops to codelength 9.06051 (3.35843 + 5.70209) in 1107 modules. (661 non-trivial modules)
+Iteration 3, moving 8282*5, 2952*3, 2911*2, 2910*1, modules*loops to codelength 7.86477 (3.43416 + 4.43061) in 2910 modules. (713 non-trivial modules)
+Iteration 4, moving 20924*6, 948*3, 883*1, nodes*loops to codelength 8.99875 (3.20257 + 5.79619) in 883 modules. (636 non-trivial modules)
+Two-level codelength: 3.20257 + 5.79619 = 8.998752671
+
+Building output tree with links... 
+  -> Writing /Users/chrislindgren/Documents/VT/pubs/swr-citation/data/network/output/ftree/outputs/20230222/swr_complete_corpus_20230220.ftree...
+Done!
+
+Attempt 8/10 at [2023-02-22 10:52:45]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1410*4, 1155*2, 1150*1, nodes*loops to codelength 9.12016 (3.43747 + 5.6827) in 1150 modules. (678 non-trivial modules)
+Iteration 2, moving 20924*5, 1173*2, 1166*1, nodes*loops to codelength 9.06959 (3.42696 + 5.64263) in 1166 modules. (669 non-trivial modules)
+Iteration 3, moving 8265*5, 2874*3, 2833*2, 2832*1, modules*loops to codelength 7.88855 (3.43259 + 4.45595) in 2832 modules. (723 non-trivial modules)
+Iteration 4, moving 20924*4, 989*3, 916*2, 915*1, nodes*loops to codelength 9.03423 (3.26817 + 5.76606) in 915 modules. (634 non-trivial modules)
+Two-level codelength: 3.26817 + 5.76606 = 9.0342304
+
+Attempt 9/10 at [2023-02-22 10:52:46]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1399*4, 1150*2, 1148*1, nodes*loops to codelength 9.10081 (3.44358 + 5.65723) in 1148 modules. (680 non-trivial modules)
+Iteration 2, moving 20924*3, 1163*2, 1157*1, nodes*loops to codelength 9.05197 (3.41218 + 5.6398) in 1157 modules. (675 non-trivial modules)
+Iteration 3, moving 8354*6, 3129*5, 2972*3, 2966*1, modules*loops to codelength 7.90545 (3.52269 + 4.38277) in 2966 modules. (724 non-trivial modules)
+Iteration 4, moving 20924*3, 1013*3, 950*1, nodes*loops to codelength 9.02463 (3.28788 + 5.73675) in 950 modules. (646 non-trivial modules)
+Two-level codelength: 3.28788 + 5.73675 = 9.024625642
+
+Attempt 10/10 at [2023-02-22 10:52:46]
+Initiated to codelength 12.9737 + 0.592485 = 13.56616312 in 20924 modules.
+Trying to find modular structure... 
+Iteration 1, moving 20924*3, 1356*4, 1108*2, 1107*1, nodes*loops to codelength 9.11704 (3.4157 + 5.70135) in 1107 modules. (673 non-trivial modules)
+Iteration 2, moving 20924*4, 1128*2, 1118*1, nodes*loops to codelength 9.05714 (3.374 + 5.68314) in 1118 modules. (667 non-trivial modules)
+Iteration 3, moving 8247*6, 2947*3, 2908*3, 2904*1, modules*loops to codelength 7.8817 (3.42404 + 4.45766) in 2904 modules. (718 non-trivial modules)
+Iteration 4, moving 20924*5, 940*2, 884*1, nodes*loops to codelength 9.01124 (3.23768 + 5.77356) in 884 modules. (642 non-trivial modules)
+Two-level codelength: 3.23768 + 5.77356 = 9.011237597
+
+
+Finished clustering 'swr_complete_corpus_20230220' in 10 trials with:
+Iteration                 Seconds          Modules       Perplexity         maxDepth    weightedDepth       Codelength 
+1                     0.255668000              911    304.550859653                2      2.000000000      9.002801980 *
+2                     0.248805000              901    310.124831059                2      2.000000000      9.010344339  
+3                     0.244641000              925    308.270790471                2      2.000000000      9.024518710  
+4                     0.246420000              912    304.229256223                2      2.000000000      9.002069702 *
+5                     0.272841000              888    296.624389785                2      2.000000000      9.011506176  
+6                     0.242489000              932    304.640765131                2      2.000000000      9.005888785  
+7                     0.280636000              883    294.724054661                2      2.000000000      8.998752671 *
+8                     0.291947000              915    301.269541773                2      2.000000000      9.034230400  
+9                     0.255396000              950    306.417970168                2      2.000000000      9.024625642  
+10                    0.248739000              884    299.843643200                2      2.000000000      9.011237597  
+----------------------------------------------------------------------------------------------------------------------
+Min:                  0.242489000              883    294.724054661                2      2.000000000      8.998752671
+Median:               0.255396000              912    304.550859653                2      2.000000000      9.011237597
+Average:              0.258758200              910    303.069610212      2.000000000      2.000000000      9.012597600
+Max:                  0.291947000              950    310.124831059                2      2.000000000      9.034230400
+
+
+Best end modular solution in 2 levels:
+Per level number of modules:         [        883,           0] (sum: 883)
+Per level number of leaf nodes:      [          0,       20924] (sum: 20924)
+Per level average child degree:      [        883,     23.6965] (average: 58.491050621)
+Per level codelength for modules:    [3.202566118, 0.000000000] (sum: 3.202566118)
+Per level codelength for leaf nodes: [0.000000000, 5.796186552] (sum: 5.796186552)
+Per level codelength total:          [3.202566118, 5.796186552] (sum: 8.998752671)
+
+===================================================
+  Infomap ends at [2023-02-22 10:52:46]
+  Elapsed time: 3s (3.045869000s)
+===================================================
+╭─chrislindgren at 420783ENGm21 in ~/Documents/VT/pubs/swr-citation/data/network/infomap on master✘✘✘
+╰─± 

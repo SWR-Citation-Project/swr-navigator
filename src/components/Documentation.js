@@ -10,15 +10,12 @@ const Documentation = () =>
         <Header as="h1">Network Navigator</Header>
         <p>
           This is an interactive zoomable map for networks clustered with <a
-          href='http://www.mapequation.org/code.html'>Infomap</a>. Think of it like Google Maps for
-          hierarchical networks. Everything runs locally on your computer; no data is uploaded to any server.
+          href='http://www.mapequation.org/code.html'>Infomap</a>. Think of it like Google Maps for hierarchical networks. Everything runs locally on your computer; no data is uploaded to any server.
         </p>
 
         <Header>Legend</Header>
         <p>
-          Modules are drawn as circles with area proportional to the contained flow. The module border
-          thickness is proportional to exiting flow. Links between nodes are aggregated on module level and
-          their thickness are proportional to the flow between modules.
+          Modules are drawn as circles with area proportional to the contained flow. The module border thickness is proportional to exiting flow. Links between nodes are aggregated on module level and their thickness are proportional to the flow between modules.
         </p>
         <Image size="large">
           <Legend/>
@@ -26,22 +23,17 @@ const Documentation = () =>
 
         <Header>Requirements</Header>
         <p>
-          Extensive testing has only been done with recent versions of Chrome, Safari and Firefox. This
-          application is graphics heavy. Older computers or laptops with integrated GPUs can
-          struggle to keep a high frame rate.
+          Extensive testing has only been done with recent versions of Chrome, Safari and Firefox. This application is graphics heavy. Older computers or laptops with integrated GPUs can struggle to keep a high frame rate.
         </p>
         <Header>Limitations</Header>
         <p>
-          At the moment, only the 20 highest ranked nodes are visible per module. There also is a limit on how
-          large files you can use. Typically sizes in the tens of megabytes will work fine.
+          At the moment, only the 20 highest ranked nodes are visible per module. There also is a limit on how large files you can use. Typically sizes in the tens of megabytes will work fine.
         </p>
 
         <Header as="h1">Navigation</Header>
         <Header>Zoom to reveal</Header>
         <p>
-          Zoom by scrolling in and out, either with your scroll wheel or two-finger swiping up and down on
-          your trackpad. Do not use the pinch-to-zoom gesture if you have a trackpad, this will zoom the
-          entire page. Reveal sub-modules by zooming in far enough.
+          Zoom by scrolling in and out, either with your scroll wheel or two-finger swiping up and down on your trackpad. Do not use the pinch-to-zoom gesture if you have a trackpad, this will zoom the entire page. Reveal sub-modules by zooming in far enough.
         </p>
 
         <Header>Click and drag to manipulate</Header>

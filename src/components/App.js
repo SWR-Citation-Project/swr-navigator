@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import { 
+  Routes, 
+  Route 
+} from "react-router-dom";
+import Home from "./Home";
 import Header from "./Header";
-import Layout from "./Layout";
-import LoadNetwork from "./LoadNetwork";
-
+import Network from "./Network";
 
 export default function App() {
-  const initialState = {
-    network: null,
-    filename: "swr_complete_corpus.ftree"
-  };
-
-  const [state, setState] = useState(initialState);
-
-  if (!state.network) {
-    return <React.Fragment>
-      <Header/>
-      <LoadNetwork onLoad={setState}/>
-    </React.Fragment>;
-  }
-
-  return <Layout {...state}/>;
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/network" element={<Network />} />
+      </Routes>
+    </>
+  );
 }

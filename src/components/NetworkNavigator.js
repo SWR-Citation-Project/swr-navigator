@@ -131,7 +131,6 @@ export default class NetworkNavigator extends React.Component {
   renderPath(currentPath) {
     const { network, nodeLimit } = this.props;
     const { dispatch } = this.context;
-
     const treeNode = network.getNodeByPath(currentPath);
 
     takeLargest(treeNode, nodeLimit);
@@ -139,7 +138,6 @@ export default class NetworkNavigator extends React.Component {
     const layout = this.layouts.get(currentPath);
 
     layout.on("click", (node) => {
-      console.log(node);
       dispatch({ type: "selectedNode", value: node });
       this.layouts.forEach((l) => l.clearSelectedNodes());
     });
@@ -180,15 +178,14 @@ export default class NetworkNavigator extends React.Component {
 
     const networkEl = svg.select("#network");
 
-    zoom.on("zoom", () => {
+    zoom.on("zoom", (event) => {
       this.layouts.forEach((layout) =>
-        layout.applyTransform(d3.event.transform).updateAttributes(),
+        layout.applyTransform(event.transform).updateAttributes(),
       );
-      networkEl.attr("transform", d3.event.transform);
+      networkEl.attr("transform", event.transform);
     });
 
     svg.select(".background").on("click", () => {
-      console.log(network);
       dispatch({ type: "selectedNode", value: network });
       this.layouts.forEach((l) => l.clearSelectedNodes());
     });

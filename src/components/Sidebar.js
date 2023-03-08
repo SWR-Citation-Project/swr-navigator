@@ -50,7 +50,7 @@ export default function Sidebar(props) {
       <Header as="h4">Export</Header>
       <Menu.Menu>
         <Menu.Item
-          as="paragraph"
+          as="p"
           content={"Export your current view of the network"}
         />
         {/* <Menu.Item

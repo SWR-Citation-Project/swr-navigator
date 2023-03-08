@@ -24,10 +24,25 @@ const countLeafNodes = (node) => {
 };
 
 export default function SelectedNode(props) {
-  const { node, directed } = props;
+  let { node, directed } = props;
   const [name, setName] = useState(node.name);
   const { dispatch } = useContext(Dispatch);
 
+  /**
+   * Initial load returns a node data structure
+   * that is different than after a 'click' event,
+   * so check which event and assign appropriately 
+   */
+  let isRoot = "";
+  if (('originalTarget' in node) === true) {
+    isRoot = node.originalTarget.__data__.path.path.toString()
+    node = node.originalTarget.__data__
+  }
+  // IF ROOT
+  else {
+    isRoot = node.path.toString()
+  }
+  
   const handleChange = (e, { value }) => {
     node.name = value;
     setName(value);
@@ -37,8 +52,6 @@ export default function SelectedNode(props) {
   useLayoutEffect(() => {
     setName(node.name);
   }, [node]);
-
-  const isRoot = node.path.toString() === "root";
 
   return (
     <Table celled singleLine striped compact size="small">
@@ -58,6 +71,7 @@ export default function SelectedNode(props) {
             />
           </Table.Cell>
         </Table.Row>
+
         <Table.Row>
           <Popup
             trigger={<Table.Cell content='Tree path'/>}
@@ -66,6 +80,7 @@ export default function SelectedNode(props) {
           />
           <Table.Cell content={node.path.toString()}/>
         </Table.Row>
+
         <Table.Row>
           <Popup
             trigger={<Table.Cell content='Flow'/>}
@@ -74,6 +89,7 @@ export default function SelectedNode(props) {
           />
           <Table.Cell content={(+node.flow).toPrecision(4)}/>
         </Table.Row>
+
         {node.enterFlow != null &&
         <Table.Row>
           <Popup
@@ -84,6 +100,7 @@ export default function SelectedNode(props) {
           <Table.Cell content={(+node.enterFlow).toPrecision(4)}/>
         </Table.Row>
         }
+
         {node.exitFlow != null &&
         <Table.Row>
           <Popup
@@ -94,6 +111,7 @@ export default function SelectedNode(props) {
           <Table.Cell content={(+node.exitFlow).toPrecision(4)}/>
         </Table.Row>
         }
+
         {isRoot && directed &&
         <Table.Row>
           <Popup
@@ -114,6 +132,7 @@ export default function SelectedNode(props) {
           <Table.Cell content={node.kout}/>
         </Table.Row>
         }
+
         {isRoot && !directed &&
         <Table.Row>
           <Popup
@@ -124,6 +143,7 @@ export default function SelectedNode(props) {
           <Table.Cell content={node.kin + node.kout}/>
         </Table.Row>
         }
+
         {node.nodes &&
         <Table.Row>
           <Popup
@@ -138,6 +158,7 @@ export default function SelectedNode(props) {
           />
         </Table.Row>
         }
+
         {node.links &&
         <Table.Row>
           <Popup
@@ -152,6 +173,7 @@ export default function SelectedNode(props) {
           />
         </Table.Row>
         }
+
         {node.totalChildren != null &&
         <Table.Row>
           <Popup
@@ -166,6 +188,7 @@ export default function SelectedNode(props) {
           />
         </Table.Row>
         }
+
       </Table.Body>
     </Table>
   );

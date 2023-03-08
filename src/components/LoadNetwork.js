@@ -6,7 +6,6 @@ import {
   Container,
   Divider,
   Image,
-  Label,
   Progress,
   Segment,
   Step,
@@ -37,9 +36,6 @@ export default class LoadNetwork extends React.Component {
   progressTimeout = null;
 
   componentDidMount() {
-
-    // temp hack load solution
-    // this.loadExampleData();
 
     const urlParams = new URLSearchParams(window.location.search);
     const args = urlParams.get("infomap");
@@ -91,6 +87,7 @@ export default class LoadNetwork extends React.Component {
 
     return parseFile(file)
       .then((parsed) => {
+
         clearTimeout(this.progressTimeout);
 
         if (parsed.errors.length) {
@@ -122,8 +119,8 @@ export default class LoadNetwork extends React.Component {
       });
   };
 
-  loadExampleData = () => {
-    const filename = "swr_complete_corpus.ftree";
+  loadNetworkData = () => {
+    const filename = "swr.ftree";
 
     this.setState({
       progressVisible: true,
@@ -134,7 +131,9 @@ export default class LoadNetwork extends React.Component {
 
     fetch(`${filename}`)
       .then((res) => res.text())
-      .then((file) => this.loadNetwork(file, filename))
+      .then((file) => {
+        this.loadNetwork(file, filename)
+      })
       .catch((err) => {
         this.setState(errorState(err));
         console.log(err);
@@ -169,7 +168,6 @@ export default class LoadNetwork extends React.Component {
           style={{ padding: "50px 0px" }}
           padded="very"
         >
-          <Label attached="top right">v {process.env.REACT_APP_VERSION}</Label>
 
           <Step.Group>
             <Step
@@ -178,7 +176,7 @@ export default class LoadNetwork extends React.Component {
               title="Load 2012-2019 SWR corpus"
               description="SWR Citation network"
               link
-              onClick={this.loadExampleData}
+              onClick={this.loadNetworkData}
             />
           </Step.Group>
 
@@ -190,7 +188,7 @@ export default class LoadNetwork extends React.Component {
                 <Step
                   disabled={disabled}
                   link
-                  onClick={() => this.loadNetwork(ftree, "swr_complete_corpus.ftree")}
+                  onClick={() => this.loadNetworkData(ftree, "swr.ftree")}
                 >
                   <Image
                     spaced="right"

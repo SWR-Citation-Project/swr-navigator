@@ -11,10 +11,10 @@ export function highlightLinks(node) {
     .select(".links")
     .selectAll(".link");
 
-  links.filter(d => d.target === node)
+  links.filter(d => d.target === node.originalTarget.__data__)
     .raise()
     .style("fill", inColor);
-  links.filter(d => d.source === node)
+  links.filter(d => d.source === node.originalTarget.__data__)
     .raise()
     .style("fill", outColor);
 }

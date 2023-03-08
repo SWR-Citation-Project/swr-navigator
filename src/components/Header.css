@@ -1,3 +1,9 @@
+.site__header_container {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 header {
     padding: 10px;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(100, 80, 50, 0.35)), color-stop(100%, rgba(0, 0, 0, 0)));
@@ -8,10 +14,32 @@ header {
     background: linear-gradient(to bottom, rgba(100, 80, 50, 0.35) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+nav {
+    flex: 1 1 auto;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: black !important;
+}
+
 .menu {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -22,9 +50,8 @@ header {
 }
 
 .brand {
-    font-family: Philosopher;
+    font-family: "Exo 2";
     font-weight: 700;
-    /*font-size: 24px;*/
 }
 
 .brand .logo-icon {
@@ -37,7 +64,7 @@ header {
 }
 
 .brand-infomap {
-    color: #555;
+    color: black;
 }
 
 .brand-nn {

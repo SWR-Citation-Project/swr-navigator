@@ -94,7 +94,7 @@ export default function parseFTree(rows) {
       const row = rows[i];
 
       if (row.length !== 4) {
-        result.errors.push(`Malformed ftree data: expected 4 fields, found ${row.length} when parsing modules.`);
+        result.errors.push(`Malformed ftree data: expected 4 fields, found ${row.length} at ${row} when parsing modules.`);
         continue;
       }
 
@@ -118,7 +118,7 @@ export default function parseFTree(rows) {
     const row = rows[i];
 
     if (row.length < 4 || row.length > 6) {
-      result.errors.push(`Malformed ftree data: expected 4 to 6 fields, found ${row.length} when parsing tree.`);
+      result.errors.push(`Malformed ftree data: expected 4 to 6 fields, found ${row.length} at ${row} when parsing tree.`);
       continue;
     }
 
