@@ -11,6 +11,8 @@
  * @param {(File|string)} file The file passed to Papa.parse
  * @return {Promise}
  */
+import Papa from "papaparse"
+
 export default function parseFile(file, opts = {}) {
   const defaultOpts = {
     comments: "#",
