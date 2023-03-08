@@ -3,12 +3,12 @@ import * as d3 from "d3";
 import * as d3c from "d3-collection";
 
 const parseDate = d3.timeParse("%m/%d/%Y")
-const xAccessor = (d) => parseDate(d.date);
-const yAccessor = (d) => d.citing_total;
+// const xAccessor = (d) => parseDate(d.date);
+// const yAccessor = (d) => d.citing_total;
 
 const IntraChart = (d) => {
 
-  const [readyData, setData] = useState()
+  // const [readyData, setData] = useState()
   const data = {}
 
   // Element References
@@ -71,8 +71,8 @@ const IntraChart = (d) => {
         data.types = _types(data.full)
         
         // Constants and parsers
-        const parseDate = d3.timeParse("%m/%d/%Y")
-        const parseYear = d3.timeParse("%Y")
+        // const parseDate = d3.timeParse("%m/%d/%Y")
+        // const parseYear = d3.timeParse("%Y")
         const margin = {top: 100, right: 10, bottom: 50, left: 125}
         const rowHeight = 12,
               topBarWidth = 20,
@@ -104,7 +104,7 @@ const IntraChart = (d) => {
         const x2 = _x2(typeEntries, x, (dimensions.containerWidth/1.15))
         
         const y = _y(types, numTypes, rowHeight, rowPadding)
-        const y2 = _y2(data.years, rowHeight)
+        // const y2 = _y2(data.years, rowHeight)
         
         const xAxis = g => {
           return (
@@ -137,19 +137,19 @@ const IntraChart = (d) => {
           .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
         // Tooltip container
-        const tooltip = d3.select(tooltipRef.current);
-        const tooltipDot = container
-          .append("circle")
-          .classed("tool-tip-dot", true)
-          .attr("r", 5)
-          .attr("fill", "#fc8781")
-          .attr("stroke", "black")
-          .attr("stroke-width", 2)
-          .style("opacity", 0)
-          .style("pointer-events", "none");
+        // const tooltip = d3.select(tooltipRef.current);
+        // const tooltipDot = container
+        //   .append("circle")
+        //   .classed("tool-tip-dot", true)
+        //   .attr("r", 5)
+        //   .attr("fill", "#fc8781")
+        //   .attr("stroke", "black")
+        //   .attr("stroke-width", 2)
+        //   .style("opacity", 0)
+        //   .style("pointer-events", "none");
 
         // Top bars for each year
-        const yearBars = container.append("g")
+        container.append("g")
           .selectAll("rect")
           .data(data.years)
           .enter().append("rect")
@@ -257,7 +257,7 @@ const IntraChart = (d) => {
       }
     }
     drawIntraChart()
-  }, [d, width, height]) // redraw chart if data or dimensions change
+  }, [d, data.full, data.types, data.years, width, height]) // redraw chart if data or dimensions change
 
   return (
     <div ref={svgContainer} className="intrachart_responsive_container">
@@ -301,9 +301,9 @@ function _types(data, rowHeight){
       .object(data)
 )}
 
-function _typeEntries(types){
-  return(d3c.entries(types))
-}
+// function _typeEntries(types){
+//   return(d3c.entries(types))
+// }
 
 function _x(data, innerWidth){
   return(
@@ -333,63 +333,63 @@ function _y(types,numTypes,rowHeight,rowPadding){
       .range(d3.range(numTypes).map(d => (d * (rowHeight + rowPadding)) + rowHeight))
 )}
 
-function _y2(years, margin){
-  return(
-    d3.scaleLinear()
-      .domain([0, d3.max(years, d => d.value)])
-      .range([0, margin.top])
-)}
+// function _y2(years, margin){
+//   return(
+//     d3.scaleLinear()
+//       .domain([0, d3.max(years, d => d.value)])
+//       .range([0, margin.top])
+// )}
 
-function exp(rowHeight){
-  return(
-    d3.scaleSqrt()
-      .domain([0, 1])
-      .range([0, rowHeight / 2])
-)}
+// function exp(rowHeight){
+//   return(
+//     d3.scaleSqrt()
+//       .domain([0, 1])
+//       .range([0, rowHeight / 2])
+// )}
 
-function pow(data){
-  return(
-    d3.scalePow()
-      .exponent(10)
-      .domain([0, d3.max(data, d => d.cited_total)])
-      // .domain([0, totalCitations)
-      .range([0, 1])
-)}
+// function pow(data){
+//   return(
+//     d3.scalePow()
+//       .exponent(10)
+//       .domain([0, d3.max(data, d => d.cited_total)])
+//       // .domain([0, totalCitations)
+//       .range([0, 1])
+// )}
 
-function r(exp,pow){
-  return(function(d) {
-    return exp(pow(d)); 
-  }
-)}
+// function r(exp,pow){
+//   return(function(d) {
+//     return exp(pow(d)); 
+//   }
+// )}
 
-function _xAxis(numTypes,rowHeight,rowPadding,x,innerWidth,multiFormat){
-  return(
-    g => g.attr("transform", `translate(0, ${numTypes * (rowHeight + rowPadding) + rowHeight})`)
-    .call(d3.axisBottom(x).ticks(innerWidth / 100).tickFormat(multiFormat))
-    .call(g => g.select(".domain").remove())
-)}
+// function _xAxis(numTypes,rowHeight,rowPadding,x,innerWidth,multiFormat){
+//   return(
+//     g => g.attr("transform", `translate(0, ${numTypes * (rowHeight + rowPadding) + rowHeight})`)
+//     .call(d3.axisBottom(x).ticks(innerWidth / 100).tickFormat(multiFormat))
+//     .call(g => g.select(".domain").remove())
+// )}
 
-function numTypes(types){
-  return(d3c.keys(types).length)
-}
+// function numTypes(types){
+//   return(d3c.keys(types).length)
+// }
 
-function multiFormat() {
-  let formatMillisecond = d3.timeFormat(".%L"),
-    formatSecond = d3.timeFormat(":%S"),
-    formatMinute = d3.timeFormat("%I:%M"),
-    formatHour = d3.timeFormat("%I %p"),
-    formatDay = d3.timeFormat("%a %d"),
-    formatWeek = d3.timeFormat("%b %d"),
-    formatMonth = d3.timeFormat("%b"),
-    formatYear = d3.timeFormat("%Y");
+// function multiFormat() {
+//   let formatMillisecond = d3.timeFormat(".%L"),
+//     formatSecond = d3.timeFormat(":%S"),
+//     formatMinute = d3.timeFormat("%I:%M"),
+//     formatHour = d3.timeFormat("%I %p"),
+//     formatDay = d3.timeFormat("%a %d"),
+//     formatWeek = d3.timeFormat("%b %d"),
+//     formatMonth = d3.timeFormat("%b"),
+//     formatYear = d3.timeFormat("%Y");
 
-  function multiFormat(date) {
-    return (d3.timeSecond(date) < date ? formatMillisecond
-      : d3.timeMinute(date) < date ? formatSecond
-      : d3.timeHour(date) < date ? formatMinute
-      : d3.timeDay(date) < date ? formatHour
-      : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
-      : d3.timeYear(date) < date ? formatMonth : formatYear)(date);
-  }
-  return multiFormat;
-}
+//   function multiFormat(date) {
+//     return (d3.timeSecond(date) < date ? formatMillisecond
+//       : d3.timeMinute(date) < date ? formatSecond
+//       : d3.timeHour(date) < date ? formatMinute
+//       : d3.timeDay(date) < date ? formatHour
+//       : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
+//       : d3.timeYear(date) < date ? formatMonth : formatYear)(date);
+//   }
+//   return multiFormat;
+// }
