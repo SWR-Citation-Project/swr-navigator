@@ -42,7 +42,8 @@ const IntraChart = (d) => {
   const setReadyData = async (d) => {
     if (d.d.length > 0) {
       const parsedData = []
-      d.d.forEach((row) => {
+      const dataToParse = d.d
+      dataToParse.forEach((row) => {
         parsedData.push({
           cited_name: row.cited_name,
           citing_year: parseDate(row.citing_year),
