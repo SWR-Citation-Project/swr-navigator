@@ -1,6 +1,4 @@
 function drawChart(container, data){
-  console.log(container);
-  console.log(data);
   const chartWidth = 400;
   const chartHeight = 400;
  

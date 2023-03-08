@@ -11,8 +11,6 @@ export default function Network() {
 
   const [state, setState] = useState(initialState);
 
-  console.log(state);
-
   if (!state.network) {
     return <React.Fragment>
       <LoadNetwork onLoad={setState}/>
