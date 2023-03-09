@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 
 const Header = () => (
-  <header className="documentation">
+  <header className="documentation top__banner">
     <div className="ui container">
       <div className="menu">
         {/* Header Text */}

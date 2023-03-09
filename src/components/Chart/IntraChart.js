@@ -72,8 +72,6 @@ const IntraChart = (d) => {
         data.types = _types(data.full)
         
         // Constants and parsers
-        // const parseDate = d3.timeParse("%m/%d/%Y")
-        // const parseYear = d3.timeParse("%Y")
         const margin = {top: 100, right: 10, bottom: 50, left: 125}
         const rowHeight = 12,
               topBarWidth = 20,
