@@ -18,7 +18,7 @@ export default function MenuHeader() {
         Zoom in and out with your touchpad. Click on nodes to either drag and move or highlight their connections.
       </p>
       <p>
-        Default detected modules set to top 10. <br/><br/> Add or subtract the number of individual nodes in each module in the 'Settings' area. The default is set to the top 5 nodes per module.
+        Default detected "community" modules set to top 20. <br/><br/> Add or subtract the number of individual nodes in each module in the 'Settings' area. The default is set to the top 10 nodes (hubs) per "community" module.
       </p>
     </div>
   </Header>;

@@ -212,7 +212,7 @@ export default class LoadNetwork extends React.Component {
 
           <Divider
             horizontal
-            style={{ margin: "20px 100px 30px 100px" }}
+            className="network__load_assistance_msg"
             content="Click on the above 'Load' button to render the network."
           />
 

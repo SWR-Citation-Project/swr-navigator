@@ -14,7 +14,7 @@ const Header = () => (
                   <span className="brand-infomap">SWR Citational Politics Dashboard</span>
                 </a>
                 </span>
-              <div className="sub header">Enter tagline here</div>
+              {/* <div className="sub header">Enter tagline here</div> */}
             </div>
           </h1>
         </div>

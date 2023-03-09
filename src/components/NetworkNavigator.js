@@ -141,6 +141,10 @@ export default class NetworkNavigator extends React.Component {
       dispatch({ type: "selectedNode", value: node });
       this.layouts.forEach((l) => l.clearSelectedNodes());
     });
+    layout.on("touchstart", (node) => {
+      dispatch({ type: "selectedNode", value: node });
+      this.layouts.forEach((l) => l.clearSelectedNodes());
+    });
 
     layout.on("render", ({ path, layout }) => {
       this.layouts.set(path, layout);
@@ -186,6 +190,10 @@ export default class NetworkNavigator extends React.Component {
     });
 
     svg.select(".background").on("click", () => {
+      dispatch({ type: "selectedNode", value: network });
+      this.layouts.forEach((l) => l.clearSelectedNodes());
+    });
+    svg.select(".background").on("touchstart", () => {
       dispatch({ type: "selectedNode", value: network });
       this.layouts.forEach((l) => l.clearSelectedNodes());
     });

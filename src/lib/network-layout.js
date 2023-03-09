@@ -59,7 +59,7 @@ export default class NetworkLayout {
     this.nodes = [];
     this.links = [];
 
-    this.dispatch = d3.dispatch("click", "render", "destroy");
+    this.dispatch = d3.dispatch("click", "touchstart", "render", "destroy");
     this.on = this.dispatch.on.bind(this.dispatch);
 
     this.labelsVisible = labelsVisible;
@@ -171,6 +171,14 @@ export default class NetworkLayout {
           .select("circle")
           .style("stroke", "#f48074");
       })(this.dispatch);
+    // Change node color, if touched (mobile)
+    const onNodeTouchStart = ((dispatch) =>
+      function(n) {
+        dispatch.call("touchstart", this, n);
+        d3.select(this)
+          .select("circle")
+          .style("stroke", "#f48074");
+      })(this.dispatch);
 
     elements.node = parent
       .append("g")
@@ -181,6 +189,7 @@ export default class NetworkLayout {
       .append("g")
       .attr("id", (n) => n.path.toId())
       .on("click", onNodeClicked)
+      .on("touchstart", onNodeTouchStart)
       .on("mouseover", highlightLinks)
       .on("mouseout", restoreLinks(this.style))
       .call(this.onDrag);
@@ -257,7 +266,7 @@ export default class NetworkLayout {
       .text(nodeName)
       .attr("text-anchor", "start")
       .style("fill", "black")
-      .style("font-size", 13)
+      .style("font-size", `clamp(16px, 20px, 24px)`)
       .style("paint-order", "stroke")
       .style("stroke", "white")
       .style("stroke-width", "2px")

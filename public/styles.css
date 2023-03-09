@@ -159,3 +159,15 @@ h1 {
 .intrachart_responsive_container .label {
   font-size: clamp(0.5rem,0.85rem,1rem);
 }
+
+/* NETWORK NAVIGATOR */
+
+/* Load View */
+.network__load_assistance_msg {
+  display: block !important;
+  white-space: break-spaces !important;
+  height: auto;
+  margin: 1rem !important;
+  line-height: 1;
+  text-align: center;
+}

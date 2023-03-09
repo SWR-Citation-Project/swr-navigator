@@ -34,13 +34,19 @@ export default function SelectedNode(props) {
    * so check which event and assign appropriately 
    */
   let isRoot = "";
+  // IF CLICK EVENT
   if (('originalTarget' in node) === true) {
     isRoot = node.originalTarget.__data__.path.path.toString()
     node = node.originalTarget.__data__
   }
+  // IF TOUCH EVENT
+  else if (('srcElement' in node) === true) {
+    isRoot = node.srcElement.__data__.path.path.toString()
+    node = node.srcElement.__data__
+  }
   // IF ROOT
   else {
-    isRoot = node.path.toString()
+    isRoot = node.path.path.toString()
   }
   
   const handleChange = (e, { value }) => {
