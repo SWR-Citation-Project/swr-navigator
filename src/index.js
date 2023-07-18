@@ -16,7 +16,7 @@ Sentry.init({
     if (event.exception) {
       Sentry.showReportDialog({
         eventId: event.event_id,
-        subtitle2: "If you'd like to help, tell us what happened below. Your network data stay on your computer."
+        subtitle2: "If you'd like to help, tell us what happened below. Your network data stays on your computer."
       });
     }
     return event;

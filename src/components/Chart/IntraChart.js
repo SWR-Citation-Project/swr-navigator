@@ -300,10 +300,6 @@ function _types(data, rowHeight){
       .object(data)
 )}
 
-// function _typeEntries(types){
-//   return(d3c.entries(types))
-// }
-
 function _x(data, innerWidth){
   return(
     d3.scaleTime()
@@ -332,63 +328,3 @@ function _y(types,numTypes,rowHeight,rowPadding){
       .range(d3.range(numTypes).map(d => (d * (rowHeight + rowPadding)) + rowHeight))
 )}
 
-// function _y2(years, margin){
-//   return(
-//     d3.scaleLinear()
-//       .domain([0, d3.max(years, d => d.value)])
-//       .range([0, margin.top])
-// )}
-
-// function exp(rowHeight){
-//   return(
-//     d3.scaleSqrt()
-//       .domain([0, 1])
-//       .range([0, rowHeight / 2])
-// )}
-
-// function pow(data){
-//   return(
-//     d3.scalePow()
-//       .exponent(10)
-//       .domain([0, d3.max(data, d => d.cited_total)])
-//       // .domain([0, totalCitations)
-//       .range([0, 1])
-// )}
-
-// function r(exp,pow){
-//   return(function(d) {
-//     return exp(pow(d)); 
-//   }
-// )}
-
-// function _xAxis(numTypes,rowHeight,rowPadding,x,innerWidth,multiFormat){
-//   return(
-//     g => g.attr("transform", `translate(0, ${numTypes * (rowHeight + rowPadding) + rowHeight})`)
-//     .call(d3.axisBottom(x).ticks(innerWidth / 100).tickFormat(multiFormat))
-//     .call(g => g.select(".domain").remove())
-// )}
-
-// function numTypes(types){
-//   return(d3c.keys(types).length)
-// }
-
-// function multiFormat() {
-//   let formatMillisecond = d3.timeFormat(".%L"),
-//     formatSecond = d3.timeFormat(":%S"),
-//     formatMinute = d3.timeFormat("%I:%M"),
-//     formatHour = d3.timeFormat("%I %p"),
-//     formatDay = d3.timeFormat("%a %d"),
-//     formatWeek = d3.timeFormat("%b %d"),
-//     formatMonth = d3.timeFormat("%b"),
-//     formatYear = d3.timeFormat("%Y");
-
-//   function multiFormat(date) {
-//     return (d3.timeSecond(date) < date ? formatMillisecond
-//       : d3.timeMinute(date) < date ? formatSecond
-//       : d3.timeHour(date) < date ? formatMinute
-//       : d3.timeDay(date) < date ? formatHour
-//       : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
-//       : d3.timeYear(date) < date ? formatMonth : formatYear)(date);
-//   }
-//   return multiFormat;
-// }

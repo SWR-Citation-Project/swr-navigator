@@ -2,12 +2,10 @@
 
 ## TODO
 
-- D3 differences:
-    - Network: "d3": "^5.15.1"
-    - Dashboard/all else: "d3": "^6.5.0",
-- Integrate Multipage approach with summary stats on the homepage
-    - Use [weather dashboard](/Users/chrislindgren/Development/dataviz/fullstack-d3-advanced-code/13-using-d3-with-react-js) from Wattenberger's book as template
-- Network page should autoload
+- Adjust root state management for differences in data
+    - Filter select via `nModules`
+    - Load metadata into bulleted list
+- Network page should autoload?
 
 ## Data
 

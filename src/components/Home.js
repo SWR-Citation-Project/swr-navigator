@@ -8,9 +8,10 @@ import IntraChart from "./Chart/IntraChart"
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(false);
-  const [intraData, SetIntraRows] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const [intraData, setIntraData] = useState([])
 
+  // Fetch INTRACHART Data
   useEffect(() => {
     setLoading(true)
 
@@ -30,7 +31,7 @@ export default function Home() {
     const getIntraData = async () => {
       const d = await fetchIntraData
       setLoading(false)
-      SetIntraRows(d)
+      setIntraData(d)
     }
     getIntraData()
   }, [])
@@ -64,8 +65,7 @@ export default function Home() {
               </>
             ) : (
               <>
-                <IntraChart d={intraData}>
-                </IntraChart>
+                <IntraChart d={intraData}></IntraChart>
               </>
             )
           }

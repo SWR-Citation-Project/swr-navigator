@@ -21,5 +21,17 @@ yarn-debug.log*
 yarn-error.log*
 
 public/data
+public/voronoi
+public/shared
+public/js/voronoi
+src/lib/voronoi
+public/hubs_FBT_top5_LV.csv
+src/components/data/hubs_FBT_top5_LV.csv
+src/components/Chart/Clusters.js
+src/components/Chart/HubsDash.jsx
+src/components/Chart/HubsSummary.js
+src/components/Chart/CommPerYear.js
+src/components/LoadHubs.js
+src/components/Chart/setup.js
 
 .idea/*
