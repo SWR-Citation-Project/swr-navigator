@@ -17,7 +17,6 @@
     "d3-polygon": "^1.0.6",
     "d35": "npm:d3@^5.9.2",
     "file-saver": "^1.3.8",
-    "gsap": "npm:@gsap/shockingly@^3.11.4",
     "localforage": "^1.7.3",
     "lodash": "^4.17.21",
     "navio": "^0.0.67",
