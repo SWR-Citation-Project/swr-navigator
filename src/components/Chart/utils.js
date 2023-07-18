@@ -159,9 +159,9 @@ export const summaryHubsStats = (state, value) => {
           stats = state.moduleMetaData
         }
 
-        function toPercentage(n, sign) {
-          return (n * 100).toFixed(0) + sign
-        }
+        // function toPercentage(n, sign) {
+        //   return (n * 100).toFixed(0) + sign
+        // }
         
         if (stats.periodNumber !== undefined) {
           document.querySelector('#periodNumber').innerText = stats.periodNumber
