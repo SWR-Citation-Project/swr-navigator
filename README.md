@@ -23,7 +23,7 @@ From the root folder, run the following command to start the development server:
 
 - “ and ”
 - ‘ and ‘
-- "nan Women Farmers""
+- "Women Farmers""
 - "nan "I Get So Mad (igetsomad)"
 - "Council of Writing Program Administrators, National Council of Teachers of English, and National Writing Project."
 - 21:37 3.57225e-05" Council of Teachers of English" 17733

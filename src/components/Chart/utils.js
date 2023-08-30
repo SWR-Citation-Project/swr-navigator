@@ -103,15 +103,12 @@ export const summaryHubsStats = (state, value) => {
             selected: false
         },
     ],
-
     notifyParentOfAspectRatio: function(graphType) {
         var aspectRatio = document.body.clientHeight / document.body.clientWidth
         var message = ['aspectRatio', graphType, String(aspectRatio)].join(':')
         window.parent.postMessage(message, '*')
     },
-
     dataSourceFilename: function(state, opts) {
-
       if (opts === undefined) opts = {}
       var base = ''
       var filepath = []
@@ -123,7 +120,6 @@ export const summaryHubsStats = (state, value) => {
               'top' + String(state.nModules),
           ].join('_')
       }
-
       /**
        * 
        * TO-DO: Remove slice option
@@ -133,20 +129,16 @@ export const summaryHubsStats = (state, value) => {
       if (state.onlyLikelyVoters) filepath += '_LV'
       return filepath + '.csv'
     },
-
     dataSourceRemoteURL: function(state, opts) {
       var filename = hubStats.dataSourceFilename(state, opts)
       var remoteURL = 'http://127.0.0.1:5501/' //Change to root host
       return filename.replace('../', remoteURL)
     },
-
     renderDataStats(state, currentPeriodDataChosen) {
         let stats
         console.log('here')
-
         // First init
         if (currentPeriodDataChosen === 0) {
-
           if (state.segment === "FBT") {
             stats = state.moduleMetaData[currentPeriodDataChosen+2]
           }
@@ -231,4 +223,40 @@ export const makeOptions = (selectElem, data) => {
     }
 
   })
+}
+
+export const renderDataStats = (state, currentPeriodDataChosen) => {
+  let stats
+  console.log('state:')
+  console.log(state)
+  console.log('currentPeriodDataChosen:')
+  console.log(currentPeriodDataChosen)
+  // First init
+  if (currentPeriodDataChosen === 0) {
+    if (state.segment === "FBT") {
+      stats = state.moduleMetaData[currentPeriodDataChosen+2]
+    }
+    else {
+      stats = state.moduleMetaData[currentPeriodDataChosen+1]
+    }
+  }
+  // Other even changes (slider, etc.)
+  else if (currentPeriodDataChosen !== 0) {
+    stats = state.moduleMetaData
+  }
+
+  // function toPercentage(n, sign) {
+  //   return (n * 100).toFixed(0) + sign
+  // }
+
+  if (stats.periodNumber !== undefined) {
+    document.querySelector('#periodNumber').innerText = stats.periodNumber
+    document.querySelector('#avgTotalComms').innerText = stats.avgTotalComms
+    document.querySelector('#avgCodeLength').innerText = stats.avgCodeLength
+    document.querySelector('#avgPerplexity').innerText = stats.avgPerplexity
+    document.querySelector('#totalNodes').innerText = stats.totalNodes
+    document.querySelector('#totalLinks').innerText = stats.totalLinks
+    document.querySelector('#totalWeight').innerText = stats.totalWeight
+    document.querySelector('#danglingNodes').innerText = stats.danglingNodes
+  }
 }

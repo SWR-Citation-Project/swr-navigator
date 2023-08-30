@@ -87,7 +87,6 @@ export default class LoadNetwork extends React.Component {
 
     return parseFile(file)
       .then((parsed) => {
-
         clearTimeout(this.progressTimeout);
 
         if (parsed.errors.length) {

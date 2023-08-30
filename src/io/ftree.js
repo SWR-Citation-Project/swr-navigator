@@ -67,6 +67,7 @@
  * @return {Object}
  */
 export default function parseFTree(rows) {
+  console.log(rows)
   const result = {
     data: {
       tree: [],
@@ -87,12 +88,9 @@ export default function parseFTree(rows) {
   if (/\*Modules/i.test(rows[i][0].toString())) {
     // Consume modules header
     i++;
-
     const nodesHeader = /\*(Nodes|Tree)/i;
-
     for (; i < rows.length && !nodesHeader.test(rows[i][0].toString()); i++) {
       const row = rows[i];
-
       if (row.length !== 4) {
         result.errors.push(`Malformed ftree data: expected 4 fields, found ${row.length} at ${row} when parsing modules.`);
         continue;
@@ -105,23 +103,18 @@ export default function parseFTree(rows) {
         exitFlow: row[3]
       });
     }
-
     // Consume a line if current line is a header
-    if (nodesHeader.test(rows[i][0].toString())) {
-      i++;
-    }
+    if (nodesHeader.test(rows[i][0].toString())) { i++; }
   }
 
   // 1. Parse tree section
   // ftree-files has sections of *Links following the tree data
   for (; i < rows.length && !/\*Links/i.test(rows[i][0].toString()); i++) {
     const row = rows[i];
-
     if (row.length < 4 || row.length > 6) {
       result.errors.push(`Malformed ftree data: expected 4 to 6 fields, found ${row.length} at ${row} when parsing tree.`);
       continue;
     }
-
     const node = {
       path: row[0],
       flow: row[1],
@@ -132,7 +125,6 @@ export default function parseFTree(rows) {
     if (row.length === 5) {
       node.stateNode = row[3];
     }
-
     tree.push(node);
   }
 

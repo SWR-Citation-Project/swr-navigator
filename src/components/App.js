@@ -6,7 +6,7 @@ import {
 import Home from "./Home";
 import Header from "./Header";
 import Network from "./Network";
-// import LoadHubs from "./LoadHubs";
+import LoadHubs from "./LoadHubs";
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/network" element={<Network />} />
         {/* <Route path="/clusters" element={<Clusters />} /> */}
-        {/* <Route path="/hubs" element={<LoadHubs />} /> */}
+        <Route path="/hubs" element={<LoadHubs />} />
       </Routes>
     </>
   );

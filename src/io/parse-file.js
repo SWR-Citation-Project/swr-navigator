@@ -16,7 +16,8 @@ import Papa from "papaparse"
 export default function parseFile(file, opts = {}) {
   const defaultOpts = {
     comments: "#",
-    delimiter: " ",
+    // delimiter: ",", //for csv
+    delimiter: " ", //for ftree
     quoteChar: "\"",
     dynamicTyping: true,
     skipEmptyLines: true,
